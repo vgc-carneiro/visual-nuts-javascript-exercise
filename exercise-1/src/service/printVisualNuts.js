@@ -3,26 +3,21 @@ const {
   integerDivisibleByThree,
 } = require('../useCase/integerDivisibleByThree');
 
+function decidePrint(number) {
+  const byThree = integerDivisibleByThree(number);
+  const byFive = integerDivisibleByFive(number);
+
+  if (byThree && byFive) return 'Visual Nuts';
+  if (byThree) return 'Visual';
+  if (byFive) return 'Nuts';
+
+  return number;
+}
+
 module.exports = {
   printVisualNuts: (number) => {
     for (let i = 1; i <= number; i++) {
-      const byThree = integerDivisibleByThree(i);
-      const byFive = integerDivisibleByFive(i);
-
-      if (byThree && byFive) {
-        console.log('Visual Nuts');
-        continue;
-      }
-      if (byThree) {
-        console.log('Visual');
-        continue;
-      }
-      if (byFive) {
-        console.log('Nuts');
-        continue;
-      }
-
-      console.log(i);
+      console.log(decidePrint(i));
     }
   },
 };
