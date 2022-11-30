@@ -1,1 +1,3 @@
-console.log("Here is my index.js");
+const { printVisualNuts } = require('./src/service/printVisualNuts');
+
+printVisualNuts(100);
