@@ -1,8 +1,12 @@
 const {
   integerDivisibleByThree,
-} = require('../src/useCase/integerDivisibleByThree');
+} = require('../../src/useCase/integerDivisibleByThree');
 
 describe('Check integer is divisible per 3', () => {
+  test('Check if undefined is not divisible per 3', () => {
+    expect(integerDivisibleByThree(undefined)).toBeFalsy();
+  });
+
   test('Check if null is not divisible per 3', () => {
     expect(integerDivisibleByThree(null)).toBeFalsy();
   });
