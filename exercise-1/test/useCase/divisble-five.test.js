@@ -1,8 +1,11 @@
 const {
   integerDivisibleByFive,
-} = require('../src/useCase/integerDivisibleByFive');
+} = require('../../src/useCase/integerDivisibleByFive');
 
 describe('Check integer is divisible per 5', () => {
+  test('Check if undefined is not divisible per 5', () => {
+    expect(integerDivisibleByFive(undefined)).toBeFalsy();
+  });
   test('Check if null is not divisible per 5', () => {
     expect(integerDivisibleByFive(null)).toBeFalsy();
   });
